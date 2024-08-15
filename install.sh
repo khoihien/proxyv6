@@ -12,7 +12,7 @@ gen64() {
 	echo "$1:$(ip64):$(ip64):$(ip64):$(ip64)"
 }
 install_3proxy() {
-    #!echo "installing 3proxy"
+    #!echo "Đang cài đặt 3proxy"
     #!URL="https://raw.githubusercontent.com/quayvlog/quayvlog/main/3proxy-3proxy-0.8.6.tar.gz"
     #!wget -qO- $URL | bsdtar -xvf-
     #!cd 3proxy-3proxy-0.8.6
@@ -62,8 +62,8 @@ upload_proxy() {
     zip --password $PASS proxy.zip proxy.txt
     URL=$(curl -s --upload-file proxy.zip https://transfer.sh/proxy.zip)
 
-    echo "Proxy is ready! Format IP:PORT:LOGIN:PASS"
-    echo "Download zip archive from: ${URL}"
+    echo "Proxy đã sẵn sàng - kiểu định dạnh là IP:PORT:LOGIN:PASS"
+    echo "Tải file nén tại địa chỉm: ${URL}"
     echo "Password: ${PASS}"
 
 }
@@ -84,7 +84,7 @@ gen_ifconfig() {
 $(awk -F "/" '{print "ifconfig enp1s0 inet6 add " $5 "/64"}' ${WORKDATA})
 EOF
 }
-echo "installing apps"
+echo "Cài đặt ứng dụng"
 yum -y install gcc net-tools bsdtar zip >/dev/null
 
 install_3proxy
@@ -99,7 +99,7 @@ IP6=$(curl -6 -s icanhazip.com | cut -f1-4 -d':')
 
 echo "Internal ip = ${IP4}. Exteranl sub for ip6 = ${IP6}"
 
-echo "How many proxy do you want to create? Example 500"
+echo "Bạn muốn tạo bao nhiêu proxy? Ví dụ 500"
 read COUNT
 
 FIRST_PORT=10000
