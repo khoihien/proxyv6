@@ -64,7 +64,7 @@ upload_proxy() {
     URL=$(curl -s --upload-file proxy.zip https://transfer.sh/proxy.zip)
 
     echo "Proxy đã sẵn sàng - kiểu định dạnh là IP:PORT:LOGIN:PASS"
-    echo "Tải file nén tại địa chỉm: ${URL}"
+    echo "Tải file nén tại địa chỉ: ${URL}"
     echo "Password: ${PASS}"
 
 }
