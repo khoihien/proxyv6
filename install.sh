@@ -1,4 +1,7 @@
 #!/bin/sh
+ rm -f /home/proxy-installer/proxy.txt
+  rm -f /home/proxy-installer/proxy.zip
+   rm -f /home/proxy-installer/data.txt
 random() {
 	tr </dev/urandom -dc A-Za-z0-9 | head -c5
 	echo
