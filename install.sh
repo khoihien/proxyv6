@@ -31,6 +31,8 @@ install_3proxy() {
     ln -s Makefile.Linux Makefile
     make
     sudo make install
+    chmod +x /etc/init.d/3proxy
+    chkconfig 3proxy on
     cd $WORKDIR
 }
 
